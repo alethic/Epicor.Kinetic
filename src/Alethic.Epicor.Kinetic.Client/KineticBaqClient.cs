@@ -34,9 +34,9 @@ public sealed class KineticBaqClient : IKineticBaqClient
     /// </summary>
     public KineticBaqClient(HttpClient httpClient, IOptions<KineticOptions> options, ILogger<KineticBaqClient> logger)
     {
-        _http = httpClient;
-        _options = options.Value;
-        _logger = logger;
+        _http = Guard.NotNull(httpClient, nameof(httpClient));
+        _options = Guard.NotNull(options, nameof(options)).Value;
+        _logger = Guard.NotNull(logger, nameof(logger));
     }
 
     /// <inheritdoc/>

@@ -39,9 +39,9 @@ public sealed partial class KineticODataContextFactory : IKineticODataContextFac
         IOptions<KineticOptions> options,
         ILogger<KineticODataContextFactory> logger)
     {
-        _httpClientFactory = httpClientFactory;
-        _options = options.Value;
-        _logger = logger;
+        _httpClientFactory = Guard.NotNull(httpClientFactory, nameof(httpClientFactory));
+        _options = Guard.NotNull(options, nameof(options)).Value;
+        _logger = Guard.NotNull(logger, nameof(logger));
     }
 
     /// <inheritdoc/>

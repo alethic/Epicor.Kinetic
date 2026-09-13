@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using Alethic.Epicor.Kinetic.Client.Internal;
+
 namespace Alethic.Epicor.Kinetic.Client;
 
 /// <summary>
@@ -62,8 +64,8 @@ public sealed partial class KineticHttpHandler : DelegatingHandler
     /// </summary>
     public KineticHttpHandler(IOptions<KineticOptions> options, ILogger<KineticHttpHandler> logger)
     {
-        _options = options.Value;
-        _logger = logger;
+        _options = Guard.NotNull(options, nameof(options)).Value;
+        _logger = Guard.NotNull(logger, nameof(logger));
 
         if (_options.AccessTokenProvider is null)
             _basicCredentials = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_options.Username}:{_options.Password}"));
