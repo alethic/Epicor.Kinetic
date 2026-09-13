@@ -1,0 +1,27 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="CLAUDE.md" />
+    <File Path="Directory.Build.props" />
+    <File Path="GitVersion.yml" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+    <File Path="Alethic.Epicor.Kinetic.dist.msbuildproj" />
+    <File Path=".github/workflows/Alethic.Epicor.Kinetic.yml" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Alethic.Epicor.Kinetic.Sample/Alethic.Epicor.Kinetic.Sample.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Alethic.Epicor.Kinetic.Client/Alethic.Epicor.Kinetic.Client.csproj" />
+  </Folder>
+  <Folder Name="/src/dist/">
+    <Project Path="src/dist-nuget/dist-nuget.csproj" />
+    <Project Path="src/dist-tests/dist-tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Alethic.Epicor.Kinetic.Client.Tests/Alethic.Epicor.Kinetic.Client.Tests.csproj" />
+  </Folder>
+</Solution>

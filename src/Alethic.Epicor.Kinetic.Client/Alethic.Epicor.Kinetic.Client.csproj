@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <IsPackable>true</IsPackable>
+        <PackageId>Alethic.Epicor.Kinetic.Client</PackageId>
+        <Description>Thin, composable .NET client for the Epicor Kinetic REST v2 API: Functions, business object methods, BAQs and OData.</Description>
+        <PackageTags>epicor;kinetic;erp;rest;odata;client</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.11" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.11" />
+        <PackageReference Include="Microsoft.OData.Client" Version="7.22.0" />
+        <PackageReference Include="Polyfill" Version="11.2.0" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="System.Text.Json" Version="10.0.11" />
+    </ItemGroup>
+
+</Project>
